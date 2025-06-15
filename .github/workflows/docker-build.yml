@@ -1,9 +1,6 @@
 name: Build Docker Image and Export as Artifact
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -16,14 +13,14 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t my-image:latest .
+        docker build -t v2ray:latest .
 
     - name: Save Docker image to tar
       run: |
-        docker save my-image:latest -o my-image.tar
+        docker save v2ray:latest -o v2ray.tar
 
     - name: Upload image tar as artifact
       uses: actions/upload-artifact@v4
       with:
         name: docker-image-tar
-        path: my-image.tar
+        path: v2ray.tar
