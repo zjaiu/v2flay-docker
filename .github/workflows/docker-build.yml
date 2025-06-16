@@ -42,7 +42,7 @@ jobs:
     - name: Build tag & latest release
       run: |
         docker buildx build --platform ${{ steps.prepare.outputs.docker_platforms }} \
-        --output "type=image,dest=./ }}" \
+        --output "type=docker" \
         --tag "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.docker_tag }}" \
         --tag "${{ steps.prepare.outputs.docker_image }}:latest" \
         --build-arg TAG=${{ steps.prepare.outputs.docker_tag }} \
