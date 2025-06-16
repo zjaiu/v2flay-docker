@@ -2,9 +2,7 @@ name: Build Docker Image and Export as Artifact
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: "The tag version you want to build"
+
 
 jobs:
   build:
