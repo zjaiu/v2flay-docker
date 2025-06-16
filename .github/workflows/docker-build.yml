@@ -46,7 +46,7 @@ jobs:
         --tag "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.docker_tag }}" \
         --tag "${{ steps.prepare.outputs.docker_image }}:latest" \
         --build-arg TAG=${{ steps.prepare.outputs.docker_tag }} \
-        --file Dockerfile .
+        --file Dockerfile . && ls
 
     - name: Save Docker image to tar
       run: |
