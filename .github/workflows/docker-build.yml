@@ -50,10 +50,10 @@ jobs:
 
     - name: Save Docker image to tar
       run: |
-        docker save "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.docker_tag }}"  -o "/tmp/v2ray/v2ray-image.tar"
+        docker save "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.docker_tag }}"  -o "/tmp/v2ray-image.tar"
 
     - name: Upload image tar as artifact
       uses: actions/upload-artifact@v4
       with:
         name: docker-image-tar
-        path: /tmp/v2ray/v2ray-image.tar
+        path: /tmp/v2ray-image.tar
